@@ -3,7 +3,7 @@ const helloHandler = require('./netlify/functions/hello')
 exports.handler = async (event, context) => {
   const path = event.path;
   if (path === "/.netlify/functions/hello") {
-    return helloHandler.hello(event, context);
+    return helloHandler.handler(event, context);
   }
   return {
     statusCode: 404,
