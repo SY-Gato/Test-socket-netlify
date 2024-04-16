@@ -1,7 +1,7 @@
 const socketio = require("socket.io");
 
 exports.handler = async (event, context) => {
-  const io = socketio.Server();
+  const io = new socketio.Server();
   io.on("connection", (sock) => {
     console.log("Client Connected.");
     sock.on("message", (data) => {
